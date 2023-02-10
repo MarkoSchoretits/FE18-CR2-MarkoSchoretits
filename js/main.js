@@ -46,7 +46,7 @@ let detailsBtns = document.getElementsByClassName("detailsBtn");
 
 // refresh value output for property "importance"
 function refresh(i) {
-    document.getElementsByClassName("importance")[i].innerHTML = `&nbsp; ${tasks[i].importance} &nbsp;`;
+    document.getElementsByClassName("importance")[i].innerHTML = `&nbsp;${tasks[i].importance}&nbsp;`;
 
     if(tasks[i].importance > 1) {
         if(tasks[i].importance > 3) {
