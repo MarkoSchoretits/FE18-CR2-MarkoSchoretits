@@ -1,0 +1,35 @@
+/* RESETS */
+* {
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;    
+}
+
+/* FONTS */
+@font-face{
+    font-family:"LouisGeorgeCafe";
+    src:url("fonts/Louis\ George\ Cafe.ttf")
+}
+
+@font-face{
+    font-family:"TinDoghouse";
+    src:url("fonts/TinDog.ttf")
+}
+
+/* GENERAL ELEMENTS */
+body {
+    font-family:LouisGeorgeCafe;
+}
+
+a {
+    font-style: oblique;
+    font-weight: bold;
+    color: inherit;
+    opacity: .7;
+}
+
+a:hover {
+    opacity: 1;
+}
