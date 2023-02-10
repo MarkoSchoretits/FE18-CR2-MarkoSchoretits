@@ -11,22 +11,26 @@ let tasks = JSON.parse(tasksData);
 
 // MAIN JS FILE
 
-// initual coloring of importance level
+// initial coloring of importance level
 var colorCode = "btn-success";
+
+// initial show of details content
+var detailsContent = "";
 
 // output of a single card
 for(let count of tasks){
 document.getElementById("output").innerHTML += `
-<div><div class="card" style="width: 18rem;">
+<div class="p-3"><div class="card" style="width: 18rem;">
 <img src="${count.taskImage}" class="card-img-top" alt="${count.taskName}">
-<div class="card-body">
+<div class="card-body bg-light">
   <h5 class="card-title">${count.taskName}</h5>
   <p class="card-text">${count.taskDescription}</p>
   <p class="iMinus btn btn-success">-</p>
   <span class="importance btn ${colorCode}">&nbsp; ${count.importance} &nbsp;</span>
   <p class="iPlus btn btn-danger">+</p>
   <br>
-  <a href="#" class="btn btn-primary">Show Details</a>
+  <p class="detailsBtn btn btn-primary">Show Details</p>
+  <p class="details card-text">${detailsContent}</P>
 </div>
 </div><div>`
 }
@@ -34,6 +38,7 @@ document.getElementById("output").innerHTML += `
 // fetch all buttons
 let plusBtns = document.getElementsByClassName("iPlus");
 let minusBtns = document.getElementsByClassName("iMinus");
+let detailsBtns = document.getElementsByClassName("detailsBtn");
 
 // refresh value output for property "importance"
 function refresh(i) {
@@ -72,7 +77,7 @@ function minimax(check) {
     return(check);
 }
 
-// increase and decrease value of "importance"
+// increase and decrease value of "importance", show details
 for(let i = 0; i < plusBtns.length; i++){
     plusBtns[i].addEventListener("click", function(){
         tasks[i].importance++;
@@ -83,5 +88,9 @@ for(let i = 0; i < plusBtns.length; i++){
         tasks[i].importance--;
         tasks[i].importance = minimax(tasks[i].importance);
         refresh(i);
+    })
+    detailsBtns[i].addEventListener("click", function(){
+        detailsContent = tasks[i].deadline;
+        document.getElementsByClassName("details")[i].innerHTML = `deadline: ${detailsContent}`;
     })
 }
