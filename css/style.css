@@ -33,3 +33,13 @@ a {
 a:hover {
     opacity: 1;
 }
+
+/* SPECIFIC ELEMENS */
+.hero {
+    position: relative;
+}
+.heropic {
+    height: 38vh;
+    width: 100%;
+    object-fit: cover;
+}
