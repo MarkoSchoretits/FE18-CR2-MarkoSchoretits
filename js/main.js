@@ -20,19 +20,23 @@ var detailsContent = "";
 // output of a single card
 for(let count of tasks){
 document.getElementById("output").innerHTML += `
-<div class="p-3"><div class="card  bg-light" style="width: 18rem;">
-<img src="${count.taskImage}" class="card-img-top" alt="${count.taskName}">
-<div class="card-body mb-1">
-  <h5 class="card-title">${count.taskName}</h5>
-  <p class="card-text">${count.taskDescription}</p>
-  <p class="iMinus btn btn-success">-</p>
-  <span class="importance btn ${colorCode}">&nbsp; ${count.importance} &nbsp;</span>
-  <p class="iPlus btn btn-danger">+</p>
-  <br>
-  <p class="detailsBtn btn btn-primary">Show Details</p>
-  <p class="details card-text">${detailsContent}</P>
-</div>
-</div><div>`
+<div class="p-3">
+    <div class="card bg-light" style="width: 18rem; margin: auto;">
+        <img src="${count.taskImage}" class="card-img-top" alt="${count.taskName}">
+        <div class="card-body mb-1">
+            <h5 class="card-title">${count.taskName}</h5>
+            <p class="card-text">${count.taskDescription}</p>
+            <div class="text-center">
+                <p class="iMinus btn btn-outline-success mt-3">-</p>
+                <span class="importance btn ${colorCode}">&nbsp;${count.importance}&nbsp;</span>
+                <p class="iPlus btn btn-outline-danger mt-3">+</p>
+                <br>
+                <p class="detailsBtn btn btn-outline-dark">Show Details</p>
+            </div>
+            <p class="details card-text">${detailsContent}</P>
+        </div>
+    </div>
+</div>`
 }
 
 // fetch all buttons
