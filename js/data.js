@@ -46,5 +46,11 @@ let tasksData = `[{
     "taskDescription":"Relax and recover positive energy on yet another island in the genesis of future history.",
     "importance":0,
     "deadline":"2024-02-18"
+},{
+    "taskName":"Homo-Demens-watching",
+    "taskImage":"https://cdn.pixabay.com/photo/2014/07/24/05/25/pedestrians-400811_960_720.jpg",
+    "taskDescription":"Panic and wonder about the genesis of future history for this odd species.",
+    "importance":42,
+    "deadline":"daily"
 }
 ]`
