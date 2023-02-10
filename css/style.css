@@ -27,6 +27,7 @@ a {
     font-style: oblique;
     font-weight: bold;
     color: inherit;
+    text-decoration: none;
     opacity: .7;
 }
 
@@ -35,6 +36,8 @@ a:hover {
 }
 
 /* SPECIFIC ELEMENS */
+
+/* Header */
 .hero {
     position: relative;
 }
@@ -42,4 +45,29 @@ a:hover {
     height: 38vh;
     width: 100%;
     object-fit: cover;
+}
+
+/* Footer */
+footer {
+    font-size: 1.rem;
+    color: #999;
+    min-height: 200px;
+    background-color: #333;
+    padding: 2% 1% 2%;
+}
+#Logo-footer {
+    max-width: 200px;
+    position: relative;
+}
+#EasterEgg {
+    color: #333;
+    font-style: normal;
+    cursor: pointer;
+}
+.buttons {
+    height: 48px;
+    margin-right: 32px;
+}
+li {
+    padding-bottom: 1rem;
 }
