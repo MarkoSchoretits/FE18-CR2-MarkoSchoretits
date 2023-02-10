@@ -20,9 +20,9 @@ var detailsContent = "";
 // output of a single card
 for(let count of tasks){
 document.getElementById("output").innerHTML += `
-<div class="p-3"><div class="card" style="width: 18rem;">
+<div class="p-3"><div class="card  bg-light" style="width: 18rem;">
 <img src="${count.taskImage}" class="card-img-top" alt="${count.taskName}">
-<div class="card-body bg-light">
+<div class="card-body mb-1">
   <h5 class="card-title">${count.taskName}</h5>
   <p class="card-text">${count.taskDescription}</p>
   <p class="iMinus btn btn-success">-</p>
