@@ -1,39 +1,13 @@
 
 /* TO DO:
-    Export JSON
     Add Details
         Data
         Functionality
 */
 
-// JSON DATA
+// JSON DATA conversion
 
-let tasks = [{
-    "taskName":"Birdwatching",
-    "taskImage":"https://cdn.pixabay.com/photo/2022/02/20/13/56/red-throated-barbet-7024605__340.jpg",
-    "taskDescription":"Relax and recover positive energy in nature.",
-    "importance":0,
-    "deadline":"2024-02-18"
-},{
-    "taskName":"Raccoonwatching",
-    "taskImage":"https://cdn.pixabay.com/photo/2022/05/29/05/31/raccoon-7228457__340.jpg",
-    "taskDescription":"Relax and recover positive energy in nature in the evenings.",
-    "importance":0,
-    "deadline":"2024-02-18"
-},{
-    "taskName":"Birdwatching",
-    "taskImage":"https://cdn.pixabay.com/photo/2022/02/20/13/56/red-throated-barbet-7024605__340.jpg",
-    "taskDescription":"Relax and recover positive energy in nature.",
-    "importance":0,
-    "deadline":"2024-02-18"
-},{
-    "taskName":"Raccoonwatching",
-    "taskImage":"https://cdn.pixabay.com/photo/2022/05/29/05/31/raccoon-7228457__340.jpg",
-    "taskDescription":"Relax and recover positive energy in nature in the evenings.",
-    "importance":0,
-    "deadline":"2024-02-18"
-}
-]
+let tasks = JSON.parse(tasksData);
 
 // MAIN JS FILE
 
