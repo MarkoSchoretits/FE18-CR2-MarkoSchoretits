@@ -1,21 +1,49 @@
-
-/* TO DO:
-    Add Details
-        Data
-        Functionality
-*/
-
 // JSON DATA conversion
 
 let tasks = JSON.parse(tasksData);
-
-// MAIN JS FILE
 
 // initial coloring of importance level
 var colorCode = "btn-success";
 
 // initial show of details content
 var detailsContent = "";
+
+let plusBtns = document.getElementsByClassName("iPlus");
+let minusBtns = document.getElementsByClassName("iMinus");
+let detailsBtns = document.getElementsByClassName("detailsBtn");
+
+// SORTING ALGORITHM
+// fetch all sort buttons and -links 
+let sumBtns = document.getElementsByClassName("sumBtn");
+
+// the actual sorting algorithm
+function sort() {
+    let newTasks = new Array();
+    newTasks.length = 0;
+    console.log(newTasks);
+
+    for(let level = 0; level < 43; level++){
+        for(let i = 0; i < plusBtns.length; i++){
+            if(tasks[i].importance == level){
+                console.log(tasks[i].importance);
+                console.log(level);
+                
+                newTasks.push(tasks[i]);
+            }
+        }
+    }
+    tasks = newTasks;
+    document.getElementById("output").innerHTML = ``;
+    main();
+}
+
+// trigger sort by event on sort buttons and -links
+for(let i = 0; i < sumBtns.length; i++){
+    sumBtns[i].addEventListener("click", function(){
+        sort();
+    })}
+function main(){
+// MAIN JS FILE
 
 // output of a single card
 for(let count of tasks){
@@ -40,9 +68,9 @@ document.getElementById("output").innerHTML += `
 }
 
 // fetch all buttons
-let plusBtns = document.getElementsByClassName("iPlus");
-let minusBtns = document.getElementsByClassName("iMinus");
-let detailsBtns = document.getElementsByClassName("detailsBtn");
+plusBtns = document.getElementsByClassName("iPlus");
+minusBtns = document.getElementsByClassName("iMinus");
+detailsBtns = document.getElementsByClassName("detailsBtn");
 
 // refresh value output for property "importance"
 function refresh(i) {
@@ -98,3 +126,6 @@ for(let i = 0; i < plusBtns.length; i++){
         document.getElementsByClassName("details")[i].innerHTML = `deadline: ${detailsContent}`;
     })
 }
+}
+
+main();
