@@ -10,17 +10,17 @@
 /* FONTS */
 @font-face{
     font-family:"LouisGeorgeCafe";
-    src:url("fonts/Louis\ George\ Cafe.ttf")
+    src:url("/fonts/Louis\ George\ Cafe.ttf")
 }
 
 @font-face{
     font-family:"TinDoghouse";
-    src:url("fonts/TinDog.ttf")
+    src:url("/fonts/TinDog.ttf")
 }
 
 /* GENERAL ELEMENTS */
 body {
-    font-family:LouisGeorgeCafe;
+    font-family: "LouisGeorgeCafe";
 }
 
 a {
