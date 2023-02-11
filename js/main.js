@@ -50,14 +50,10 @@ let sumBtns = document.getElementsByClassName("sumBtn");
 function sort() {
     let newTasks = new Array();
     newTasks.length = 0;
-    console.log(newTasks);
 
     for(let level = 0; level < 43; level++){
         for(let i = 0; i < plusBtns.length; i++){
             if(tasks[i].importance == level){
-                console.log(tasks[i].importance);
-                console.log(level);
-                
                 newTasks.push(tasks[i]);
             }
         }
