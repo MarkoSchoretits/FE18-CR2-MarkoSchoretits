@@ -1,6 +1,12 @@
-// JSON DATA conversion
+//////////////////////////
+// JSON DATA CONVERSION //
+//////////////////////////
 
 let tasks = JSON.parse(tasksData);
+
+////////////////////////////////////////////////
+// VARIABLE DECLARATIONS AND COMMON FUNCTIONS //
+////////////////////////////////////////////////
 
 // initial coloring of importance level
 var colorCode = "btn-success";
@@ -8,11 +14,35 @@ var colorCode = "btn-success";
 // initial show of details content
 var detailsContent = "";
 
+// Buttons Arrays
 let plusBtns = document.getElementsByClassName("iPlus");
 let minusBtns = document.getElementsByClassName("iMinus");
 let detailsBtns = document.getElementsByClassName("detailsBtn");
 
-// SORTING ALGORITHM
+// refresh coloring
+let i = 0;
+function refreshColor(i){
+    
+    if(tasks[i].importance > 1) {
+        if(tasks[i].importance > 3) {
+            colorCode = "btn-danger";
+        }
+        else {
+            colorCode = "btn-warning";
+        }
+    }
+    else {
+        colorCode = "btn-success";
+    }
+
+    document.getElementsByClassName("importance")[i].classList.remove("btn-dark", "btn-danger", "btn-warning", "btn-success");
+    document.getElementsByClassName("importance")[i].classList.add(colorCode);
+}
+
+///////////////////////
+// SORTING ALGORITHM //
+///////////////////////
+
 // fetch all sort buttons and -links 
 let sumBtns = document.getElementsByClassName("sumBtn");
 
@@ -35,6 +65,14 @@ function sort() {
     tasks = newTasks;
     document.getElementById("output").innerHTML = ``;
     main();
+
+    for(let i = 0; i < plusBtns.length; i++){
+        refreshColor(i);
+
+        // reset show of details content
+        detailsContent = "";
+        document.getElementsByClassName("details")[i].innerHTML = ``;
+    }
 }
 
 // trigger sort by event on sort buttons and -links
@@ -42,8 +80,13 @@ for(let i = 0; i < sumBtns.length; i++){
     sumBtns[i].addEventListener("click", function(){
         sort();
     })}
+
+
+//////////////////
+// MAIN JS FILE //
+//////////////////
+
 function main(){
-// MAIN JS FILE
 
 // output of a single card
 for(let count of tasks){
@@ -76,21 +119,7 @@ detailsBtns = document.getElementsByClassName("detailsBtn");
 function refresh(i) {
     document.getElementsByClassName("importance")[i].innerHTML = `&nbsp;${tasks[i].importance}&nbsp;`;
 
-    if(tasks[i].importance > 1) {
-        if(tasks[i].importance > 3) {
-            colorCode = "btn-danger";
-        }
-        else {
-            colorCode = "btn-warning";
-        }
-    }
-    else {
-        colorCode = "btn-success";
-    }
-
-    // refresh coloring
-    document.getElementsByClassName("importance")[i].classList.remove("btn-dark", "btn-danger", "btn-warning", "btn-success");
-    document.getElementsByClassName("importance")[i].classList.add(colorCode);
+    refreshColor(i);
 }
 
 // limit importance to values between 0 and 6
@@ -127,5 +156,9 @@ for(let i = 0; i < plusBtns.length; i++){
     })
 }
 }
+
+//////////////////
+// CALL MAIN JS //
+//////////////////
 
 main();
