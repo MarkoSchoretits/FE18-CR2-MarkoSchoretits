@@ -82,6 +82,11 @@ for(let i = 0; i < sumBtns.length; i++){
 // MAIN JS FILE //
 //////////////////
 
+/* This was initially written as the main program. 
+   When new functionality was added, that required repeating this code, 
+   the relevant pasassages were packed into a function "main()".
+   Usually function in function should be avoided */
+
 function main(){
 
 // output of a single card
